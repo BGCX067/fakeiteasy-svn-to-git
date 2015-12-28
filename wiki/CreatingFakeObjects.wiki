@@ -1,0 +1,31 @@
+#labels Featured
+= The different ways of creating fakes =
+
+One of the main motivation for creating FakeItEasy is to provide a framework that can be used in the way the developer wants to use it. Some developers likesthe "Moq"-way, that is creating an object that provides an interface for configuring and asserting on a fake object, along with a property for the faked object itself. Others like the "Rhino"-way where proxies of the faked type are created directly. Using fake it easy two different developers on the same project can use the same framework in those different ways.
+
+
+= Details =
+== Proxies ==
+To create a faked instance of a given type you simply write:
+
+*C#*
+{{{
+var foo = A.Fake<IFoo>();
+}}}
+
+*VB*
+{{{
+Dim foo = A.Fake(Of IFoo)()
+}}}
+== Fake objects ==
+To create the Moq-style fake objects:
+
+*C#*
+{{{
+var fake = new Fake<IFoo>();
+}}}
+
+*VB*
+{{{
+Dim fake As New Fake(Of IFoo)()
+}}}

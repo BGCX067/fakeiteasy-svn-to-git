@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NUnit.Framework;
+
+namespace Legend.Fakes.Tests
+{
+    [TestFixture]
+    public class ArgumentValidationExceptionTests
+        : ExceptionTestBase<ArgumentValidationException>
+    {
+        [Test]
+        public void Constructor_that_takes_message_should_set_message_to_exception()
+        {
+            var exception = new ArgumentValidationException("foo");
+
+            Assert.That(exception.Message, Is.EqualTo("foo"));
+        }
+
+        [Test]
+        public void DefaultConstructor_should_set_message_to_exception()
+        {
+            var exception = new ArgumentValidationException();
+
+            Assert.That(exception.Message, Is.EqualTo("An argument validation was not configured correctly."));
+        }
+
+        protected override ArgumentValidationException CreateException(string message)
+        {
+            return new ArgumentValidationException(message);
+        }
+    }
+}

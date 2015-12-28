@@ -1,0 +1,1 @@
+call "Libraries\ILMerge\ilmerge.exe" /out:Legend.Fakes.dll Legend.Fakes/bin/Debug/Legend.Fakes.dll Legend.Fakes/bin/Debug/Castle.DynamicProxy2.dll Legend.Fakes/bin/Debug/Castle.Core.dll
